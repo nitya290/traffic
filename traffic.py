@@ -29,7 +29,7 @@ sample_df = default_df.drop(columns=['traffic_volume'])
 st.sidebar.image('traffic_sidebar.jpg')
 
 with st.sidebar.expander("Option 1: Upload CSV"):
-    st.header('Upload a CSV file containing the diamond details')
+    st.header('Upload a CSV file containing the details')
     userdiamond = st.file_uploader('Choose a CSV File')
     st.header('Sample Data Format for Upload')
     st.write(sample_df.head())
@@ -37,7 +37,7 @@ with st.sidebar.expander("Option 1: Upload CSV"):
 with st.sidebar.expander("Option 2: Fill Out Form"):
     with st.form("Option 2: Fill Out Form"):
 
-        st.header("Diamond Features Input")
+        st.header("Features Input")
         
         holiday = st.selectbox('Holiday', options=['None', 'Columbus Day','Independence Day','Christmas Day','Labor Day','Martin Luther King Jr Day','Memorial Day','New Years Day','State Fair','Thanksgiving Day','Veterans Day','Washingtons Birthday'])
         temp = st.number_input('Temperature', min_value=default_df['temp'].min(), max_value=default_df['temp'].max(), step=1.0)
@@ -149,7 +149,7 @@ if userdiamond:
     user_df['CI Upper'] = upper_limits
 
 
-    st.subheader("Predicting Diamond Prices")
+    st.subheader("Predicting Traffic Volume")
     st.dataframe(user_df)
 
 st.subheader("Model Insights")
